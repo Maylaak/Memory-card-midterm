@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 2px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #560505;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.memory-game {
+  width: 55%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.memory-card {
+  width: 20%;
+  height: 30%;
+  margin: 5px;
+  position: relative;
+  transform-style: preserve-3d;/*new*/
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #b8ae8b;
+  backface-visibility: hidden;/*new*/
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+#timer,
+#scoreboard {
+  margin-top: 20px;
+  color: aliceblue;
+}
+
+#scoreboard {
+  display: flex;
+  justify-content: space-around;
+}
+
+#score,
+#best-score {
+  margin-top: 10px;
+}
+
+#timer{
+  padding-top: 20px;
+}
